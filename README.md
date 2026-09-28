@@ -9,3 +9,5 @@
 |2|lab2|———|———|
 |3|lab3|———|———|
 |4|lab4|———|———|
+
+! [картинка 1](https://share.google/1yYQ1fLa2VjuaBAlJ)
