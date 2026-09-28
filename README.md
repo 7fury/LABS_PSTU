@@ -10,4 +10,4 @@
 |3|lab3|———|———|
 |4|lab4|———|———|
 
-! [картинка 1](https://share.google/1yYQ1fLa2VjuaBAlJ)
+! [картинка 1](https://m-dekor.by/catalog/1691/main.webp)
