@@ -1,0 +1,194 @@
+<mxfile host="Electron" pages="2">
+  <diagram name="Страница-1" id="SNxi_DDpawOOm8d0aG-N">
+    <mxGraphModel dx="1185" dy="2469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#FFFFFF;strokeColor=#000000;fontSize=14;fontFamily=Courier New;fontStyle=1" value="начало" vertex="1">
+          <mxGeometry height="50" width="200" x="350" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="comment" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New;align=center;spacingLeft=8;verticalAlign=middle;" value="&lt;br&gt;#include &amp;lt;iostream&amp;gt;&lt;br&gt;#include &amp;lt;clocale&amp;gt;&lt;br&gt;using namespace std;" vertex="1">
+          <mxGeometry height="90" width="430" x="235" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p_setlocale" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="setlocale(LC_ALL, &amp;quot;.65001&amp;quot;);" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p_init" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="int n = 2, m = 1;" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="io_cout1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="cout &amp;lt;&amp;lt; &amp;quot;Исходные значения: n = &amp;quot; &amp;lt;&amp;lt; n &amp;lt;&amp;lt; &amp;quot;, m = &amp;quot; &amp;lt;&amp;lt; m &amp;lt;&amp;lt; &#39;\n&#39;;" vertex="1">
+          <mxGeometry height="80" width="600" x="150" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="p_n1m1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="int n1 = n, m1 = m;" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="p_res1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="int res1 = ++n1 * ++m1;" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="io_cout2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="cout &amp;lt;&amp;lt; &amp;quot;++n * ++m = &amp;quot; &amp;lt;&amp;lt; res1 &amp;lt;&amp;lt; &amp;quot; (n = &amp;quot; &amp;lt;&amp;lt; n1 &amp;lt;&amp;lt; &amp;quot;, m = &amp;quot; &amp;lt;&amp;lt; m1 &amp;lt;&amp;lt; &amp;quot;)\n&amp;quot;;" vertex="1">
+          <mxGeometry height="80" width="600" x="150" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="p_n2m2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="int n2 = n, m2 = m;" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="p_res2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="bool res2 = (m2++ &amp;lt; n2);" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="io_cout3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="cout &amp;lt;&amp;lt; boolalpha &amp;lt;&amp;lt; &amp;quot;m++ &amp;lt; n = &amp;quot; &amp;lt;&amp;lt; res2 &amp;lt;&amp;lt; &amp;quot; (n = &amp;quot; &amp;lt;&amp;lt; n2 &amp;lt;&amp;lt; &amp;quot;, m = &amp;quot; &amp;lt;&amp;lt; m2 &amp;lt;&amp;lt; &amp;quot;)\n&amp;quot;;" vertex="1">
+          <mxGeometry height="80" width="600" x="150" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="p_n3m3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="int n3 = n, m3 = m;" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="p_res3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="bool res3 = (n3++ &amp;gt; m3);" vertex="1">
+          <mxGeometry height="50" width="500" x="200" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="io_cout4" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontFamily=Courier New" value="cout &amp;lt;&amp;lt; &amp;quot;n++ &amp;gt; m = &amp;quot; &amp;lt;&amp;lt; res3 &amp;lt;&amp;lt; &amp;quot; (n = &amp;quot; &amp;lt;&amp;lt; n3 &amp;lt;&amp;lt; &amp;quot;, m = &amp;quot; &amp;lt;&amp;lt; m3 &amp;lt;&amp;lt; &amp;quot;)\n&amp;quot;;" vertex="1">
+          <mxGeometry height="80" width="600" x="150" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#FFFFFF;strokeColor=#000000;fontSize=14;fontFamily=Courier New;fontStyle=1" value="return 0" vertex="1">
+          <mxGeometry height="50" width="200" x="350" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="comment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="comment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_setlocale">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="p_setlocale" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_init">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="p_init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="io_cout1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="io_cout1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_n1m1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="p_n1m1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_res1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="p_res1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="io_cout2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="io_cout2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_n2m2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="p_n2m2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_res2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="p_res2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="io_cout3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="io_cout3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_n3m3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="p_n3m3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="p_res3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="p_res3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="io_cout4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="io_cout4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="hFWJKANHrQsH3WUX7xfW" name="Страница-2">
+    <mxGraphModel dx="1652" dy="1717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="comment" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#000000;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontFamily=Courier New;fontSize=11;" value="#include &amp;lt;iostream&amp;gt;&lt;br&gt;#include &amp;lt;iomanip&amp;gt;&lt;br&gt;#include &amp;lt;clocale&amp;gt;&lt;br&gt;using namespace std;" vertex="1">
+          <mxGeometry height="140" width="260" x="-20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=13;fontStyle=1;" value="Начало" vertex="1">
+          <mxGeometry height="50" width="160" x="340" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="setlocale" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="setlocale(LC_ALL, &quot;.65001&quot;);" vertex="1">
+          <mxGeometry height="50" width="280" x="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="coutsetup" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="cout &amp;lt;&amp;lt; fixed &amp;lt;&amp;lt; setprecision(10);" vertex="1">
+          <mxGeometry height="50" width="280" x="280" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="f_init" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="float f_a = 100.0f, f_b = 0.001f;&#xa;float f_aMinusB = f_a - f_b;&#xa;float f_square = f_aMinusB * f_aMinusB;&#xa;float f_fourthPower = f_square * f_square;" vertex="1">
+          <mxGeometry height="80" width="320" x="260" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="f_pow" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="float f_a2 = f_a * f_a;&#xa;float f_a3 = f_a2 * f_a;&#xa;float f_a4 = f_a2 * f_a2;" vertex="1">
+          <mxGeometry height="70" width="320" x="260" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="f_bpow" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="float f_b2 = f_b * f_b;&#xa;float f_b3 = f_b2 * f_b;&#xa;float f_b4 = f_b2 * f_b2;" vertex="1">
+          <mxGeometry height="70" width="320" x="260" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="f_result" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="float f_numerator = f_fourthPower - (f_a4 - 4 * f_a3 * f_b);&#xa;float f_denominator = 6 * f_a2 * f_b2 - 4 * f_a * f_b3 + f_b4;&#xa;float f_result = f_numerator / f_denominator;" vertex="1">
+          <mxGeometry height="80" width="360" x="240" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="f_out" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="cout &amp;lt;&amp;lt; &quot;\\nТип данных: float\\n&quot;&#xa;     &amp;lt;&amp;lt; &quot;Числитель = &quot; &amp;lt;&amp;lt; f_numerator &amp;lt;&amp;lt; &#39;\\n&#39;&#xa;     &amp;lt;&amp;lt; &quot;Знаменатель = &quot; &amp;lt;&amp;lt; f_denominator &amp;lt;&amp;lt; &#39;\\n&#39;&#xa;     &amp;lt;&amp;lt; &quot;Результат = &quot; &amp;lt;&amp;lt; f_result &amp;lt;&amp;lt; &#39;\\n&#39;;" vertex="1">
+          <mxGeometry height="100" width="360" x="240" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="d_init" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="double d_a = 100.0, d_b = 0.001;&#xa;double d_aMinusB = d_a - d_b;&#xa;double d_square = d_aMinusB * d_aMinusB;&#xa;double d_fourthPower = d_square * d_square;" vertex="1">
+          <mxGeometry height="80" width="320" x="260" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="d_pow" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="double d_a2 = d_a * d_a;&#xa;double d_a3 = d_a2 * d_a;&#xa;double d_a4 = d_a2 * d_a2;" vertex="1">
+          <mxGeometry height="70" width="320" x="260" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="d_bpow" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="double d_b2 = d_b * d_b;&#xa;double d_b3 = d_b2 * d_b;&#xa;double d_b4 = d_b2 * d_b2;" vertex="1">
+          <mxGeometry height="70" width="320" x="260" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="d_result" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="double d_numerator = d_fourthPower - (d_a4 - 4 * d_a3 * d_b);&#xa;double d_denominator = 6 * d_a2 * d_b2 - 4 * d_a * d_b3 + d_b4;&#xa;double d_result = d_numerator / d_denominator;" vertex="1">
+          <mxGeometry height="80" width="360" x="240" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="d_out" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Courier New;fontSize=11;" value="cout &amp;lt;&amp;lt; &quot;\\nТип данных: double\\n&quot;&#xa;     &amp;lt;&amp;lt; &quot;Числитель = &quot; &amp;lt;&amp;lt; d_numerator &amp;lt;&amp;lt; &#39;\\n&#39;&#xa;     &amp;lt;&amp;lt; &quot;Знаменатель = &quot; &amp;lt;&amp;lt; d_denominator &amp;lt;&amp;lt; &#39;\\n&#39;&#xa;     &amp;lt;&amp;lt; &quot;Результат = &quot; &amp;lt;&amp;lt; d_result &amp;lt;&amp;lt; &#39;\\n&#39;;" vertex="1">
+          <mxGeometry height="100" width="360" x="240" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=13;fontStyle=1;" value="return 0;" vertex="1">
+          <mxGeometry height="50" width="160" x="340" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="setlocale">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="setlocale" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="coutsetup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="coutsetup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="f_init">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="f_init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="f_pow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="f_pow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="f_bpow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="f_bpow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="f_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="f_result" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="f_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="f_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="d_init">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="d_init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="d_pow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="d_pow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="d_bpow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="d_bpow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="d_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="d_result" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="d_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="d_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_comment" edge="1" parent="1" source="comment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
