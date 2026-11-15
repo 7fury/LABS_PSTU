@@ -1,0 +1,504 @@
+SECTION 7560310 10692130 1080135 539750 720090 720090
+TABLES 1
+TABLE 0 rows=1 cols=1
+  ROW 0: #include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <clocale>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    const double a = 0.1;
+    const double b = 1.0;
+    const int K = 10;
+    const int N = 35;
+    const double eps = 1e-4;
+
+    double h = (b - a) / K;
+
+    cout << fixed << setprecision(6);
+    cout << "X\tSN\tSE\tY\n";
+
+    for (int i = 0; i <= K; ++i)
+    {
+        double x = a + i * h;
+
+        // Сумма для заданного n = 35
+        double SN = 0.0;
+        double termN = 1.0; // a_0
+
+        for (int n = 0; n <= N; ++n)
+        {
+            SN += termN;
+
+            termN *= -((2.0 * n * n + 4.0 * n + 3.0) * x * x) /
+                     ((2.0 * n * n + 1.0) * (2.0 * n + 1.0) * (2.0 * n + 2.0));
+        }
+
+
+        double SE = 0.0;
+        double termE = 1.0; // a_0
+        int n = 0;
+
+        while (fabs(termE) >= eps && n < 10000)
+        {
+            SE += termE;
+
+            termE *= -((2.0 * n * n + 4.0 * n + 3.0) * x * x) /
+                     ((2.0 * n * n + 1.0) * (2.0 * n + 1.0) * (2.0 * n + 2.0));
+
+            ++n;
+        }
+
+        double Y = (1.0 - x * x / 2.0) * cos(x) - (x / 2.0) * sin(x);
+
+        cout << x << "\t" << SN << "\t" << SE << "\t" << Y << "\n";
+    }
+
+    return 0;
+}
+P0 style=Heading 2 align=JUSTIFY (3) first=450215 left=None before=0 after=0 line=1.5 pagebreak=None
+P1 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'ПЕРМСКИЙ НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ПОЛИТЕХНИ' font=None size=203200 b=None i=None u=None
+   R 'ЧЕСКИЙ УНИВЕРСИТЕТ' font=None size=203200 b=None i=None u=None
+P2 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Отчет по дисциплинам:' font=None size=None b=None i=None u=None
+P3 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R '“' font=None size=203200 b=None i=None u=None
+   R 'ИНФОРМАТИКА' font=None size=203200 b=None i=None u=None
+   R '”' font=None size=203200 b=None i=None u=None
+P4 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R '“' font=None size=203200 b=None i=None u=None
+   R 'ОСНОВЫ АЛГОРИТМИЗАЦИИ И ПРОГРАММИРОВАНИЯ' font=None size=203200 b=None i=None u=None
+   R '”' font=None size=203200 b=None i=None u=None
+P5 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R '“' font=None size=203200 b=None i=None u=None
+   R 'ВВЕДЕНИЕ В ИНЖЕНЕРНУЮ ДЕЯТЕЛЬНОСТЬ”' font=None size=203200 b=None i=None u=None
+P6 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Лабораторная работа номер 1' font=None size=203200 b=None i=None u=None
+P7 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Вариант номер ' font=None size=203200 b=None i=None u=None
+   R '22' font=None size=203200 b=None i=None u=None
+P8 style=Heading 2 align=CENTER (1) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Знакомство с С++. Выполнение программы простой структу' font=None size=203200 b=None i=None u=None
+   R 'ры' font=None size=203200 b=None i=None u=None
+P9 style=Heading 2 align=JUSTIFY (3) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+P10 style=Heading 2 align=RIGHT (2) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Выполнил' font=None size=177800 b=None i=None u=None
+P11 style=Heading 2 align=RIGHT (2) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Студент группы Рис-26-1б' font=None size=177800 b=None i=None u=None
+P12 style=Heading 2 align=RIGHT (2) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Филимонов Андрей Дмитриевич' font=None size=177800 b=None i=None u=None
+P13 style=Heading 2 align=RIGHT (2) first=450215 left=None before=None after=None line=1.5 pagebreak=None
+   R 'Проверил: доцент кафедры ИТАС О.А. Полякова' font=None size=177800 b=None i=None u=None
+P14 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '2026' font=None size=177800 b=None i=None u=None
+   R '' font=None size=203200 b=None i=None u=None
+   R '1. Постановка задачи' font=Times New Roman size=177800 b=True i=None u=None
+   HASBR
+P15 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Для ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ', изменяющегося от ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R ' до ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'b' font=Times New Roman size=152400 b=None i=None u=None
+   R ' с шагом ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'h' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = (' font=Times New Roman size=152400 b=None i=None u=None
+   R 'b' font=Times New Roman size=152400 b=None i=None u=None
+   R ' - ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R ') / ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'k' font=Times New Roman size=152400 b=None i=None u=None
+   R ', где ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'k' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 10, вычислить функцию ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'f' font=Times New Roman size=152400 b=None i=None u=None
+   R '(' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R '), используя её разложение в степенной ряд в двух случаях:' font=Times New Roman size=152400 b=None i=None u=None
+P16 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R 'а) для заданного ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'n' font=Times New Roman size=152400 b=None i=None u=None
+   R ';' font=Times New Roman size=152400 b=None i=None u=None
+P17 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R 'б) для заданной точности ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 0,0001.' font=Times New Roman size=152400 b=None i=None u=None
+P18 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Для сравнения найти точное значение функции.' font=Times New Roman size=152400 b=None i=None u=None
+P19 style=Normal align=None first=None left=None before=152400 after=76200 line=None pagebreak=None
+   R 'Параметры варианта № 22:' font=Times New Roman size=165100 b=True i=None u=None
+P20 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R '1. Исходная функция:' font=Times New Roman size=152400 b=None i=None u=None
+P21 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'y' font=Times New Roman size=152400 b=None i=True u=None
+   R ' = (1 - ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R '² / 2) · ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'cos' font=Times New Roman size=152400 b=None i=True u=None
+   R '(' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R ') - (' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R ' / 2) · ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'sin' font=Times New Roman size=152400 b=None i=True u=None
+   R '(' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R ')' font=Times New Roman size=152400 b=None i=True u=None
+P22 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R '2. Диапазон изменения аргумента:' font=Times New Roman size=152400 b=None i=None u=None
+P23 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R '0,1 ≤ ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R ' ≤ 1' font=Times New Roman size=152400 b=None i=True u=None
+P24 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R '3. Заданное число членов ряда:' font=Times New Roman size=152400 b=None i=None u=None
+P25 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ' = 35' font=Times New Roman size=152400 b=None i=True u=None
+P26 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R '4. Разложение функции в степенной ряд:' font=Times New Roman size=152400 b=None i=None u=None
+P27 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'S' font=Times New Roman size=152400 b=None i=True u=None
+   R ' = 1 - (3 / ' font=Times New Roman size=152400 b=None i=True u=None
+   R '2)·' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R '² + ... + (-1)ⁿ · [(2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R '² + 1) / (2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ')!] · ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R '²ⁿ' font=Times New Roman size=152400 b=None i=True u=None
+P28 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R '5. Шаг изменения аргумента:' font=Times New Roman size=152400 b=None i=None u=None
+P29 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'h' font=Times New Roman size=152400 b=None i=True u=None
+   R ' = (' font=Times New Roman size=152400 b=None i=True u=None
+   R 'b' font=Times New Roman size=152400 b=None i=True u=None
+   R ' - ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R ') / ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'k' font=Times New Roman size=152400 b=None i=True u=None
+   R ' = (1 - 0,1) / 10 = 0,09' font=Times New Roman size=152400 b=None i=True u=None
+P30 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Таким образом, ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' принимает следующие значения:' font=Times New Roman size=152400 b=None i=None u=None
+P31 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R '0,' font=Times New Roman size=152400 b=None i=None u=None
+   R '10;  0' font=Times New Roman size=152400 b=None i=None u=None
+   R ',19;  0,28;  0,37;  0,46;  0,55;  0,64;  0,73;  0,82;  0,91;  1,00.' font=Times New Roman size=152400 b=None i=None u=None
+P32 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Требуется вывести для каждого ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' значения:' font=Times New Roman size=152400 b=None i=None u=None
+P33 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'X' font=Times New Roman size=152400 b=None i=True u=None
+   R ',   ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'SN' font=Times New Roman size=152400 b=None i=True u=None
+   R ',   ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'SE' font=Times New Roman size=152400 b=None i=True u=None
+   R ',   ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'Y' font=Times New Roman size=152400 b=None i=True u=None
+P34 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'где ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'X' font=Times New Roman size=152400 b=None i=None u=None
+   R ' — значение аргумента; ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SN' font=Times New Roman size=152400 b=None i=None u=None
+   R ' — сумма ряда для заданного ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'n' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 35; ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SE' font=Times New Roman size=152400 b=None i=None u=None
+   R ' — сумма ряда для заданной точности ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 10⁻⁴; ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'Y' font=Times New Roman size=152400 b=None i=None u=None
+   R ' — точное значение функции.' font=Times New Roman size=152400 b=None i=None u=None
+P35 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '2. Методы решения' font=Times New Roman size=177800 b=True i=None u=None
+P36 style=Normal align=None first=None left=None before=152400 after=76200 line=None pagebreak=None
+   R '2.1. Математическая модель' font=Times New Roman size=165100 b=True i=None u=None
+P37 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Заданная функция:' font=Times New Roman size=152400 b=None i=None u=None
+P38 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'y(x) = (1 - x² / 2) · cos(x) - (x / 2) · sin(x)' font=Times New Roman size=152400 b=None i=True u=None
+P39 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Её разложение в степенной ряд имеет вид:' font=Times New Roman size=152400 b=None i=None u=None
+P40 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'S' font=Times New Roman size=152400 b=None i=True u=None
+   R '(' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R ') = ∑ [' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R '=0' font=Times New Roman size=152400 b=None i=True u=None
+   R ' ..' font=Times New Roman size=152400 b=None i=True u=None
+   R ' ∞] ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₙ' font=Times New Roman size=152400 b=None i=True u=None
+P41 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'где общий член ряда равен:' font=Times New Roman size=152400 b=None i=None u=None
+P42 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₙ = (-' font=Times New Roman size=152400 b=None i=True u=None
+   R '1)ⁿ' font=Times New Roman size=152400 b=None i=True u=None
+   R ' · [(2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R '² + 1) / (2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ')!] · ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R '²ⁿ' font=Times New Roman size=152400 b=None i=True u=None
+P43 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'При ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'n' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 0 получаем первый член ряда: ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R '₀ = 1.' font=Times New Roman size=152400 b=None i=None u=None
+P44 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Для сокращения объёма вычислений используется рекуррентная формула, позволяющая выразить каждый следующий член ряда через предыдущий. Найдем отношение двух соседних членов ряда:' font=Times New Roman size=152400 b=None i=None u=None
+P45 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₙ₊₁ / ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₙ = - ' font=Times New Roman size=152400 b=None i=True u=None
+   R '[ (' font=Times New Roman size=152400 b=None i=True u=None
+   R '2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R '² + 4' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ' + 3) · ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R '² ] / [ (2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R '² + 1) · (2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ' + 1) · (2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ' + 2) ]' font=Times New Roman size=152400 b=None i=True u=None
+P46 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Следовательно, следующий член ряда вычисляется по формуле:' font=Times New Roman size=152400 b=None i=None u=None
+P47 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₙ₊₁ = ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₙ · ' font=Times New Roman size=152400 b=None i=True u=None
+   R '[ -' font=Times New Roman size=152400 b=None i=True u=None
+   R ' (2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R '² + 4' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ' + 3) · ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'x' font=Times New Roman size=152400 b=None i=True u=None
+   R '² / ( (2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R '² + 1)(2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ' + 1)(2' font=Times New Roman size=152400 b=None i=True u=None
+   R 'n' font=Times New Roman size=152400 b=None i=True u=None
+   R ' + 2) ) ]' font=Times New Roman size=152400 b=None i=True u=None
+P48 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Такая форма удобна тем, что не требуется отдельно вычислять факториал (2' font=Times New Roman size=152400 b=None i=None u=None
+   R 'n' font=Times New Roman size=152400 b=None i=None u=None
+   R ')! и степень ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R '²ⁿ, что снижает количество операций и исключает вероятность переполнения разрядной сетки.' font=Times New Roman size=152400 b=None i=None u=None
+P49 style=Normal align=None first=None left=None before=152400 after=76200 line=None pagebreak=None
+   R '2.2. Вычисление суммы для заданного ' font=Times New Roman size=165100 b=True i=None u=None
+   R 'n' font=Times New Roman size=165100 b=True i=None u=None
+P50 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Для заданного ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'n' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 35 сумма вычисляется путем явного суммирования:' font=Times New Roman size=152400 b=None i=None u=None
+P51 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'SN' font=Times New Roman size=152400 b=None i=True u=None
+   R ' = ∑ [' font=Times New Roman size=152400 b=None i=True u=None
+   R 'k' font=Times New Roman size=152400 b=None i=True u=None
+   R '=0' font=Times New Roman size=152400 b=None i=True u=None
+   R ' ..' font=Times New Roman size=152400 b=None i=True u=None
+   R ' 35] ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₖ' font=Times New Roman size=152400 b=None i=True u=None
+P52 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'То есть суммируются члены ряда от ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R '₀ до ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R '₃₅ включительно.' font=Times New Roman size=152400 b=None i=None u=None
+P53 style=Normal align=None first=None left=None before=152400 after=76200 line=None pagebreak=None
+   R '2.3. Вычисление суммы для заданной точности' font=Times New Roman size=165100 b=True i=None u=None
+P54 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Для точности ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 10⁻⁴ суммирование продолжается до тех пор, пока очередной член ряда по модулю не станет меньше ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ':' font=Times New Roman size=152400 b=None i=None u=None
+P55 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R '|' font=Times New Roman size=152400 b=None i=True u=None
+   R 'a' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ₙ| ' font=Times New Roman size=152400 b=None i=True u=None
+   R '< ' font=Times New Roman size=152400 b=None i=True u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=True u=None
+P56 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Так как ряд является знакочередующимся и его члены по модулю убывают на рассматриваемом диапазоне ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' ∈ [0,1; 1], погрешность полученной суммы не превышает модуля первого отброшенного члена ряда.' font=Times New Roman size=152400 b=None i=None u=None
+P57 style=Normal align=None first=None left=None before=152400 after=76200 line=None pagebreak=None
+   R '2.4. Точное значение функции' font=Times New Roman size=165100 b=True i=None u=None
+P58 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Точное значение функции вычисляется с помощью стандартных тригонометрических функций ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'cos' font=Times New Roman size=152400 b=None i=None u=None
+   R ' и ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'sin' font=Times New Roman size=152400 b=None i=None u=None
+   R ' из библиотеки <' font=Times New Roman size=152400 b=None i=None u=None
+   R 'cmath' font=Times New Roman size=152400 b=None i=None u=None
+   R '>:' font=Times New Roman size=152400 b=None i=None u=None
+P59 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'Y = (1 - x² / 2) · cos(x) - (x / 2) · sin(x)' font=Times New Roman size=152400 b=None i=True u=None
+P60 style=Normal align=None first=None left=None before=152400 after=76200 line=None pagebreak=None
+   R '2.5. Алгоритм решения' font=Times New Roman size=165100 b=True i=None u=None
+P61 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '1. Задать начальные значения: ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 0,1; ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'b' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 1,0; ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'k' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 10; ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'n' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 35; ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 10⁻⁴.' font=Times New Roman size=152400 b=None i=None u=None
+P62 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '2. Вычислить шаг ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'h' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = (' font=Times New Roman size=152400 b=None i=None u=None
+   R 'b' font=Times New Roman size=152400 b=None i=None u=None
+   R ' - ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R ') / ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'k' font=Times New Roman size=152400 b=None i=None u=None
+   R '.' font=Times New Roman size=152400 b=None i=None u=None
+P63 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '3. Организовать внешний цикл по ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' от ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R ' до ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'b' font=Times New Roman size=152400 b=None i=None u=None
+   R ' с шагом ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'h' font=Times New Roman size=152400 b=None i=None u=None
+   R '.' font=Times New Roman size=152400 b=None i=None u=None
+P64 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '4. Для каждого значения ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ':' font=Times New Roman size=152400 b=None i=None u=None
+P65 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '    • вычислить ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SN' font=Times New Roman size=152400 b=None i=None u=None
+   R ' суммированием членов ряда от ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R '₀ до ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R '₃₅;' font=Times New Roman size=152400 b=None i=None u=None
+P66 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '    • вычислить ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SE' font=Times New Roman size=152400 b=None i=None u=None
+   R ' суммированием до выполнения условия |' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ₙ| ' font=Times New Roman size=152400 b=None i=None u=None
+   R '< ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ';' font=Times New Roman size=152400 b=None i=None u=None
+P67 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '    • вычислить точное значение ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'Y' font=Times New Roman size=152400 b=None i=None u=None
+   R ';' font=Times New Roman size=152400 b=None i=None u=None
+P68 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '    • вывести значения ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'X' font=Times New Roman size=152400 b=None i=None u=None
+   R ', ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SN' font=Times New Roman size=152400 b=None i=None u=None
+   R ', ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SE' font=Times New Roman size=152400 b=None i=None u=None
+   R ', ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'Y' font=Times New Roman size=152400 b=None i=None u=None
+   R '.' font=Times New Roman size=152400 b=None i=None u=None
+P69 style=Normal align=None first=None left=448310 before=None after=50800 line=None pagebreak=None
+   R '5. Завершить работу программы.' font=Times New Roman size=152400 b=None i=None u=None
+P70 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '3. Блок-схема алгоритма' font=Times New Roman size=177800 b=True i=None u=None
+P71 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '' font=None size=177800 b=True i=None u=None
+   HASDRAWING
+P72 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '4. Коды программ' font=Times New Roman size=177800 b=True i=None u=None
+P73 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Исходный код программы на языке ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'C' font=Times New Roman size=152400 b=None i=None u=None
+   R '++:' font=Times New Roman size=152400 b=None i=None u=None
+P74 style=Normal align=None first=None left=None before=None after=152400 line=None pagebreak=None
+P75 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '5. Результаты работы программы' font=Times New Roman size=177800 b=True i=None u=None
+P76 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '' font=None size=None b=None i=None u=None
+   HASDRAWING
+P77 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
+   R '6. Анализ результата' font=Times New Roman size=177800 b=True i=None u=None
+P78 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'В ходе выполнения лабораторной работы была вычислена функция:' font=Times New Roman size=152400 b=None i=None u=None
+P79 style=Normal align=CENTER (1) first=None left=None before=76200 after=76200 line=None pagebreak=None
+   R 'y = (1 - x² / 2) · cos(x) - (x / 2) · sin(x)' font=Times New Roman size=152400 b=None i=True u=None
+P80 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'с использованием её разложения в степенной ряд.' font=Times New Roman size=152400 b=None i=None u=None
+P81 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Для заданного числа членов ряда ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'n' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 35 сумма ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SN' font=Times New Roman size=152400 b=None i=None u=None
+   R ' практически полностью совпадает с точным значением функции ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'Y' font=Times New Roman size=152400 b=None i=None u=None
+   R '. Это объясняется тем, что на диапазоне ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' ∈ [0,1; 1] члены ряда быстро убывают, поэтому уже сравнительно небольшого числа слагаемых достаточно для получения высокой точности.' font=Times New Roman size=152400 b=None i=None u=None
+P82 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Для заданной точности ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 10⁻⁴ сумма ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SE' font=Times New Roman size=152400 b=None i=None u=None
+   R ' также близка к точному значению ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'Y' font=Times New Roman size=152400 b=None i=None u=None
+   R '. Небольшие расхождения объясняются тем, что суммирование прекращается при выполнении условия |' font=Times New Roman size=152400 b=None i=None u=None
+   R 'a' font=Times New Roman size=152400 b=None i=None u=None
+   R '♙| ' font=Times New Roman size=152400 b=None i=None u=None
+   R '< ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R '.' font=Times New Roman size=152400 b=None i=None u=None
+   R ' Поскольку ряд является знакочередующимся и его члены убывают по модулю, погрешность не превышает первого отброшенного члена ряда.' font=Times New Roman size=152400 b=None i=None u=None
+P83 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Наиболее заметное отличие ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'SE' font=Times New Roman size=152400 b=None i=None u=None
+   R ' от ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'Y' font=Times New Roman size=152400 b=None i=None u=None
+   R ' наблюдается вблизи ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 0,37 и ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 0,73, однако это отличие не превышает 10⁻⁴, что полностью соответствует условию задачи. В точке ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ' ≈ 0,91 значение функции близко к нулю, поэтому даже малая абсолютная погрешность может давать заметную относительную погрешность. В данной работе контролируется абсолютная точность, поэтому полученный результат считается корректным.' font=Times New Roman size=152400 b=None i=None u=None
+P84 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Использование рекуррентной формулы позволило избежать прямого вычисления факториалов и больших степеней ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'x' font=Times New Roman size=152400 b=None i=None u=None
+   R ', что делает программу более эффективной и устойчивой к возможным ошибкам переполнения.' font=Times New Roman size=152400 b=None i=None u=None
+P85 style=Normal align=JUSTIFY (3) first=448310 left=None before=None after=76200 line=None pagebreak=None
+   R 'Вывод: программа правильно вычисляет заданную функцию с помощью разложения в степенной ряд для заданного числа членов и для заданной точности. Полученные результаты согласуются с точными значениями функции и удовлетворяют заданной точности ' font=Times New Roman size=152400 b=None i=None u=None
+   R 'ε' font=Times New Roman size=152400 b=None i=None u=None
+   R ' = 10⁻⁴.' font=Times New Roman size=152400 b=None i=None u=None
+P86 style=Normal align=None first=None left=None before=228600 after=152400 line=None pagebreak=None
