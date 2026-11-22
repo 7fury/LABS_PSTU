@@ -1,0 +1,3 @@
+> cl /nologo /EHsc /utf-8 no_prototype.cpp /Fe:no_prototype.exe
+no_prototype.cpp
+no_prototype.cpp(15): error C3861: sum: идентификатор не найден
